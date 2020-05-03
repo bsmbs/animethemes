@@ -4,7 +4,7 @@
 
 ## Usage
 ```
-npm install animethemes
+npm install animethemes-parser
 ```
 
 Test: `npm test`
@@ -19,7 +19,7 @@ This will fetch and parse all themes for all animes available. Output: output.js
 ### In code
 
 ```js
-const AnimeThemes = require('animethemes');
+const AnimeThemes = require('animethemes-parser');
 
 const parser = new AnimeThemes()
 

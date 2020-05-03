@@ -1,5 +1,5 @@
 {
-  "name": "animethemes",
+  "name": "animethemes-parser",
   "version": "1.0.0",
   "description": "Parser for /r/animethemes wiki",
   "main": "main.js",
