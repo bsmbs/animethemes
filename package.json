@@ -1,0 +1,30 @@
+{
+  "name": "animethemes",
+  "version": "1.0.0",
+  "description": "Parser for /r/animethemes wiki",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pizza61/animethemes.git"
+  },
+  "keywords": [
+    "animethemes", "openings"
+  ],
+  "author": "pizza61",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pizza61/animethemes/issues"
+  },
+  "homepage": "https://github.com/pizza61/animethemes#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.2"
+  }
+}
