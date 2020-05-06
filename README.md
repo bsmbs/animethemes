@@ -23,7 +23,7 @@ const AnimeThemes = require('animethemes-parser');
 
 const parser = new AnimeThemes()
 
-parser.all() // Get ALL animes in /r/animethemes database (don't use it recklessy - it sends almost 30 requests to reddit, one per year + year list)
+parser.all() // Get ALL animes in /r/animethemes database (don't use it recklessly - it sends almost 30 requests to reddit, one per year + year list)
 .then(themes => {
     let anime = themes.find(x => x.title == "Date A Live");
     let op = anime.themes.find(x => x.type == "opening");
