@@ -7,6 +7,7 @@ const fs = require('fs');
  * @property {String} name Song type, number and title e.g. 
  * - OP1 "sister's noise"
  * @property {String} link Direct link to webm video on animethemes.moe
+ * @property {String} desc Link information (eg Webm (DVD, 480))
  * @property {('opening'|'ending')} type Song type
  * - opening
  * - ending
@@ -141,7 +142,8 @@ class ThemeParser {
 
         let theme = {
             id: malId,
-            title
+            title,
+            year: null
         }
 
         if (next.prop("tagName") == "P") { // If next element is other titles
@@ -164,7 +166,9 @@ class ThemeParser {
             const $ = cheerio.load(this);
             const td = $('td'); // Theme row
             let name = replaceAll(td.first().text(), "&quot;", "\""); // Theme name
-            let link = td.eq(1).children().first().attr('href'); // animethemes.moe link
+            let linkEl = td.eq(1).children().first(); // link element
+            let link = linkEl.attr('href'); // animethemes.moe link
+            let linkDesc = linkEl.text(); // link description (eg. NCBD 1080)
             let episodes = td.eq(2).text(); // Episode notes
             let notes = td.eq(3).text(); // Additional notes
 
@@ -172,6 +176,7 @@ class ThemeParser {
             themes.push({
                 name,
                 link,
+                desc: linkDesc,
                 type: (name.startsWith('OP') ? 'opening' : 'ending'),
                 episodes,
                 notes
